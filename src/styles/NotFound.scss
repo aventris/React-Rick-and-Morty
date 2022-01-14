@@ -1,0 +1,26 @@
+.notfound{
+  margin: 0;
+  background-color: #333333 ;
+  color: white;
+  text-align: center;
+  &__tittle-wrapper{
+    display: flex;
+    padding: 100px 0 100px;
+    align-items: center;
+    justify-content: center
+  };
+  &__image{
+    width: 200px;
+    height: 200px;
+    
+  }
+  &__tittle{
+    font-size:200px; 
+    text-shadow: 0 0 10px white;
+  }
+  
+  &__text{
+    font-size: 25px;
+    text-shadow: 0 0 5px white;
+  }
+}

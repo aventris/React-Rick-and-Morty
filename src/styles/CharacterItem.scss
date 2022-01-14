@@ -1,0 +1,39 @@
+.character-card{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: #666666;
+  color: white;
+  text-align: center;
+  &__image{
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    border-radius: 50%;
+  }
+  &__name{
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__status-icon{
+    width: 20px;
+    height: 20px;
+    margin: 0 auto 5px auto;
+  }
+  &__subtitle{
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  &__text{
+    color: #cccccc;
+  }
+  &__gender{
+    margin-left: 10px
+  }
+  &:hover{
+    cursor:pointer;
+    box-shadow: 0 0 10px white;
+  }
+}

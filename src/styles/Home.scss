@@ -1,0 +1,13 @@
+@use "vars";
+.home{
+  overflow-y: scroll;
+  //overflow-x: scroll;
+  height: calc(100vh - 41px);
+
+  background-color: vars.$page-background-color;
+  &__title{
+    color: white;
+    text-align: center;
+  }
+  
+}

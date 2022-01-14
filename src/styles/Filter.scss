@@ -1,0 +1,36 @@
+.filter{
+  position: relative;
+  width: 150px;
+  margin-left: 50px;
+  color: white;
+  &__button{
+    background-color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+  &__wrapper{
+    position:absolute;
+    display:flex;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #666666;
+    flex-direction: column;
+  }
+  &__line{
+    display: flex;
+    align-items: center;
+  }
+  &__group{
+    margin: 10px 0;
+    text-align: center;
+  }
+  &__icon{
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+  }
+}

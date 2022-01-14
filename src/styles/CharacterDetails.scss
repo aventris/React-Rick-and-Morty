@@ -1,0 +1,38 @@
+@use 'vars';
+
+.character{
+  overflow-y: scroll;
+  height: calc(100vh - 41px);
+  background-color: vars.$page-background-color;
+  color: white;
+  &__title{
+    text-align: center;
+  }
+  &__image{
+    margin: 0 auto;
+  }
+  &__info-wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__line-wrapper{
+    margin: 20px 0;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+  &__column-wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    & span:first-child{
+      font-weight: bold;
+    }
+    & span:last-child{
+      color: #cccccc;
+    }
+  }
+}
