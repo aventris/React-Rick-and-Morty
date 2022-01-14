@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Home from '@pages/Home';
-import Layout from '@components/Layout';
+import { Home } from '@pages/Home';
+import { Episodes } from '@pages/Episodes';
+import { Locations } from '@pages/Locations';
+import { Layout } from '@components/Layout';
 import { NotFound } from '@pages/NotFound';
-import { CharacterDetails } from '@pages/CharacterDetails';
 
 import '@styles/Globals.scss'
 
@@ -14,7 +15,8 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/character/:id" element={<CharacterDetails />} />
+          <Route path="/episodes" element={<Episodes />} />
+          <Route path="/locations" element={<Locations />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

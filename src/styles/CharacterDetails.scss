@@ -1,15 +1,45 @@
 @use 'vars';
 
 .character{
+  position: relative;
   overflow-y: scroll;
-  height: calc(100vh - 41px);
+  height: 400px;
+  width: 500px;
   background-color: vars.$page-background-color;
+  border-radius: 20px;
   color: white;
+
+  &::-webkit-scrollbar{
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+    border-radius: 10px;
+  }
+  &__close-icon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    &:hover{
+      cursor: pointer;
+      filter: drop-shadow(0 0 2px white);
+    }
+  }
   &__title{
     text-align: center;
   }
   &__image{
     margin: 0 auto;
+    width: 150px;
+    height: 150px;  
+    border-radius: 50%;
   }
   &__info-wrapper{
     display:flex;
@@ -17,17 +47,20 @@
     align-items: center;
   }
   &__line-wrapper{
-    margin: 20px 0;
-    width: 600px;
+    margin: 30px 0;
+
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    font-size: 20px;
   }
   &__column-wrapper{
     display:flex;
+    max-width:130px;
+    padding: 0 10px;
     flex-direction: column;
+    text-align: center;
     align-items: center;
+    justify-content: left;
     & span:first-child{
       font-weight: bold;
     }

@@ -1,5 +1,9 @@
 .loading{
   height: calc(100% - 150px);
+  &__title{
+    color: white;
+    text-align: center;
+  }
   &__wrapper{
     height: 100%;
     display: flex;

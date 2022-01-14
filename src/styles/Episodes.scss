@@ -1,0 +1,58 @@
+@use 'vars';
+
+.episodes{
+  height: calc(100vh - 41px);
+  overflow-y: auto;
+  background-color: vars.$page-background-color;
+  &__list-wrapper{
+    margin: 20px auto;
+    color:white;
+    width: 700px;
+    
+  }
+  &__list-header{
+    display:flex;
+    margin-bottom: 20px;
+    border-bottom: solid white 2px;
+    height: 40px;
+    span{
+      display: block;
+      font-weight: bold;
+      text-align: center;
+      &:first-child{
+        width: 150px;
+      }
+      &:nth-child(2){
+        width: 300px;
+      }
+      &:last-child{
+        width: 250px;
+      }
+    }
+  }
+  &__list-item{
+    display:flex;
+    margin: 10px 0;
+    span{
+      display: block;
+      font-weight: bold;
+      text-align: center;
+      &:first-child{
+        width: 150px;
+      }
+      &:nth-child(2){
+        width: 300px;
+      }
+      &:last-child{
+        width: 250px;
+      }
+    }
+  }
+  &__button-wrapper{
+    width: 300px;
+    margin: 30px auto;
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+  }
+}

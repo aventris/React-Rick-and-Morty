@@ -1,0 +1,57 @@
+@use 'vars';
+
+.locations{
+  color:white;
+  height: calc(100vh - 41px);
+  overflow-y: auto;
+  background-color: vars.$page-background-color;
+  text-align: center;
+  &__list-wrapper{
+    width: 700px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  &__list-header{
+    display:flex;
+    height: 40px;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    span{
+      display:block;
+      &:first-child{
+        text-align: left;
+        width: 300px
+      }
+      &:nth-child(2){
+        width:200px;
+      }
+      &:last-child{
+        width: 200px;
+      }
+    }
+  }
+  &__list-item{
+    display:flex;
+    margin: 10px 0;
+    span{
+      display:block;
+      &:first-child{
+        text-align: left;
+        width: 300px
+      }
+      &:nth-child(2){
+        width:200px;
+      }
+      &:last-child{
+        width: 200px;
+      }
+    }
+  }
+  &__button-wrapper{
+    display: flex;
+    width:500px;
+    margin:30px auto;
+
+    justify-content: space-evenly;
+  }
+}

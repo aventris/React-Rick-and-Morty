@@ -103,10 +103,9 @@ const Home = () => {
   }
   return (
     <div className='home'>
-      {state.loading && <>
-        <h1 className='home__title' >Loading...</h1>
+      {state.loading &&
         <Loading />
-      </>}
+      }
       {!state.loading && state.error && < NotFound />}
       {!state.loading && !state.error &&
         <>
@@ -126,4 +125,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export { Home };
