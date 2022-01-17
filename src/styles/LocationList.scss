@@ -1,0 +1,28 @@
+.location-list{
+  width: 700px;
+  margin: 20px auto;
+  text-align: center;
+
+  &__header{
+    display:flex;
+    height: 40px;
+    border-bottom: 2px solid white;
+    font-weight: bold;
+    span{
+      display:block;
+      &:first-child{
+        text-align: left;
+        width: 300px
+      }
+      &:nth-child(2){
+        width:200px;
+      }
+      &:nth-child(3){
+        width:200px;
+      }
+      &:last-child{
+        width: 50px;
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
+import { LocationList } from '@containers/LocationList';
+import { LocationItem } from '@components/LocationItem';
 import { Loading } from '@components/Loading';
 import { NotFound } from '@pages/NotFound';
 
@@ -47,40 +49,19 @@ const Locations = () => {
     return pageQuery
   }
 
+
+
+
   return (
     <div className='locations'>
       {loading && <Loading />}
       {!loading && error && < NotFound />}
       {!loading && !error &&
-        <>
-          <h1 className='locations__title'>Locations</h1>
-          <div className='locations__list-wrapper'>
-            <div className='locations__list-header' >
-              <span>Name</span>
-              <span>Type</span>
-              <span>Dimension</span>
-            </div>
-            {locations.results.map(location => (
-              <div key={`location-${location.id}`} className='locations__list-item' >
-                <span>{location.name}</span>
-                <span>{location.type}</span>
-                <span>{location.dimension}</span>
-              </div>
-            ))}
-          </div>
-          <div className='locations__button-wrapper' >
-            {locations.info.prev &&
-              <Link to={getPrevPage()}>
-                <button>Prev Page</button>
-              </Link>
-            }
-            {locations.info.next &&
-              <Link to={getNextPage()}>
-                <button>Next Page</button>
-              </Link>
-            }
-          </div>
-        </>
+        <LocationList getNextPage={getNextPage} getPrevPage={getPrevPage} >
+          {locations.results.map(location =>
+            <LocationItem key={location.id} location={location} />
+          )}
+        </LocationList>
       }
     </div>
   );

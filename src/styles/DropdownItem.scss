@@ -1,0 +1,17 @@
+.dropdown-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 100px;
+  img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    &:hover{
+      cursor:pointer;
+      box-shadow: 0 0 4px white;
+    }
+  }
+}

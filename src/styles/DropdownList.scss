@@ -1,0 +1,27 @@
+.dropdown-list{
+  
+  overflow-y: auto;
+  animation: growDown 1s ease forwards;
+  transform-origin: top center;
+  background-color: #515151;
+  padding: 20px 0;
+  &__wrapper{
+    display: grid;
+    max-width: 600px;
+    grid-template-columns: repeat(auto-fill,150px);
+    margin: 0 auto;
+  }
+}
+
+@keyframes growDown{
+  from{
+    max-height: 0;
+    transform: scaleY(0);
+  }
+  to {
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+}
+
+

@@ -7,7 +7,8 @@ import closeIcon from '@icons/close.png';
 import '@styles/CharacterDetails.scss';
 
 
-const CharacterDetails = ({ id: characterId, handleToggleDetails }) => {
+const CharacterDetails = ({ id, handleToggleDetails }) => {
+  console.log(id);
   const [loading, setLoading] = React.useState(true);
   const [character, setCharacter] = React.useState({})
   const ref = React.useRef();
@@ -26,7 +27,7 @@ const CharacterDetails = ({ id: characterId, handleToggleDetails }) => {
 
   React.useEffect(async () => {
     let charInfo = {}
-    let res = await fetch(`https://rickandmortyapi.com/api/character/${characterId}`);
+    let res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
     let data = await res.json();
     charInfo = { ...data }
     if (charInfo.origin.url) {

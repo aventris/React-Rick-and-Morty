@@ -8,7 +8,7 @@
   background-color: vars.$page-background-color;
   border-radius: 20px;
   color: white;
-
+  animation: zoomIn 1s ease;
   &::-webkit-scrollbar{
     width: 5px;
   }
@@ -67,5 +67,14 @@
     & span:last-child{
       color: #cccccc;
     }
+  }
+}
+
+@keyframes zoomIn{
+  from {
+    transform:scale(0.1,0.1)
+  }
+  to{
+    transform: scale(1,1);
   }
 }
