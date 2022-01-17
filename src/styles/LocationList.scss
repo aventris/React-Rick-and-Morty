@@ -9,9 +9,9 @@
     border-bottom: 2px solid white;
     font-weight: bold;
     span{
+      text-align: left;
       display:block;
       &:first-child{
-        text-align: left;
         width: 300px
       }
       &:nth-child(2){
