@@ -1,17 +1,13 @@
-@use 'vars';
+@use "vars";
 
-.locations{
-  color:white;
-  height: calc(100vh - 41px);
-  overflow-y: auto;
-  background-color: vars.$page-background-color;
+.locations {
+  color: white;
   text-align: center;
-  
- 
-  &__button-wrapper{
+
+  &__button-wrapper {
     display: flex;
-    width:500px;
-    margin:30px auto;
+    width: 500px;
+    margin: 30px auto;
 
     justify-content: space-evenly;
   }

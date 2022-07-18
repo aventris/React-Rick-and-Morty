@@ -1,58 +1,54 @@
-@use 'vars';
+@use "vars";
 
-.episodes{
-  height: calc(100vh - 41px);
-  overflow-y: auto;
-  background-color: vars.$page-background-color;
-  &__list-wrapper{
+.episodes {
+  &__list-wrapper {
     margin: 20px auto;
-    color:white;
+    color: white;
     width: 700px;
-    
   }
-  &__list-header{
-    display:flex;
+  &__list-header {
+    display: flex;
     margin-bottom: 20px;
     border-bottom: solid white 2px;
     height: 40px;
-    span{
+    span {
       display: block;
       font-weight: bold;
       text-align: center;
-      &:first-child{
+      &:first-child {
         width: 150px;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         width: 300px;
       }
-      &:last-child{
+      &:last-child {
         width: 250px;
       }
     }
   }
-  &__list-item{
-    display:flex;
+  &__list-item {
+    display: flex;
     margin: 10px 0;
-    span{
+    span {
       display: block;
       font-weight: bold;
       text-align: center;
-      &:first-child{
+      &:first-child {
         width: 150px;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         width: 300px;
       }
-      &:last-child{
+      &:last-child {
         width: 250px;
       }
     }
   }
-  &__button-wrapper{
+  &__button-wrapper {
     width: 300px;
     margin: 30px auto;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     justify-content: space-evenly;
   }
 }

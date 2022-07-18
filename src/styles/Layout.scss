@@ -1,4 +1,45 @@
-.layout{
+@import "vars";
+
+.layout {
   display: flex;
   flex-direction: column;
+}
+
+.main {
+  position: relative;
+  z-index: 0;
+  //overflow-x: scroll;
+  height: calc(100vh - 41px);
+
+  background-color: $page-background-color;
+  &__title {
+    color: white;
+    text-align: center;
+  }
+}
+.content {
+  position: absolute;
+  z-index: 1;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.animation-bg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  .unit {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: $green-color;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px $green-color;
+  }
 }

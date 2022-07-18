@@ -1,39 +1,48 @@
-.character-item{
+@import "_vars.scss";
+
+.character-item {
   display: flex;
   flex-direction: column;
   width: 300px;
   height: 400px;
   border-radius: 20px;
-  background-color: #666666;
+  //background-color: #666666;
+  border: 1px solid $green-color;
   color: white;
   text-align: center;
-  &__image{
+  &__image {
     width: 150px;
     height: 150px;
     margin: 10px auto;
     border-radius: 50%;
   }
-  &__name{
+  &__name {
     font-weight: bold;
     margin-bottom: 10px;
   }
-  &__status-icon{
+  &__status-icon {
     width: 20px;
     height: 20px;
     margin: 0 auto 5px auto;
   }
-  &__subtitle{
+  &__subtitle {
     margin-top: 10px;
     font-weight: bold;
   }
-  &__text{
+  &__text {
     color: #cccccc;
   }
-  &__gender{
-    margin-left: 10px
+  &__gender {
+    margin-left: 10px;
   }
-  &:hover{
-    cursor:pointer;
-    box-shadow: 0 0 10px white;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px $green-color;
+    img:first-child {
+      box-shadow: 0 0 8px 2px white;
+    }
+    .character-item__name {
+      text-shadow: 0 0 10px white;
+    }
   }
 }

@@ -1,15 +1,17 @@
-@use 'vars';
+@import "vars";
 
-.character{
+.character {
   position: relative;
   overflow-y: scroll;
   height: 400px;
   width: 500px;
-  background-color: vars.$page-background-color;
+  background-color: $page-background-color;
   border-radius: 20px;
-  color: white;
+  color: $green-color;
   animation: zoomIn 1s ease;
-  &::-webkit-scrollbar{
+  //border: 1px solid $green-color;
+  box-shadow: 0 0 10px 2px $green-color;
+  &::-webkit-scrollbar {
     width: 5px;
   }
   &::-webkit-scrollbar-track {
@@ -18,63 +20,63 @@
     margin-bottom: 20px;
   }
   &::-webkit-scrollbar-thumb {
-    background: #cccccc; 
+    background: #cccccc;
     border-radius: 10px;
   }
-  &__close-icon{
+  &__close-icon {
     position: absolute;
     top: 20px;
     right: 20px;
     width: 20px;
     height: 20px;
-    &:hover{
+    &:hover {
       cursor: pointer;
       filter: drop-shadow(0 0 2px white);
     }
   }
-  &__title{
+  &__title {
     text-align: center;
   }
-  &__image{
+  &__image {
     margin: 0 auto;
     width: 150px;
-    height: 150px;  
+    height: 150px;
     border-radius: 50%;
   }
-  &__info-wrapper{
-    display:flex;
+  &__info-wrapper {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
-  &__line-wrapper{
+  &__line-wrapper {
     margin: 30px 0;
 
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
   }
-  &__column-wrapper{
-    display:flex;
-    max-width:130px;
+  &__column-wrapper {
+    display: flex;
+    max-width: 130px;
     padding: 0 10px;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: left;
-    & span:first-child{
+    & span:first-child {
       font-weight: bold;
     }
-    & span:last-child{
+    & span:last-child {
       color: #cccccc;
     }
   }
 }
 
-@keyframes zoomIn{
+@keyframes zoomIn {
   from {
-    transform:scale(0.1,0.1)
+    transform: scale(0.1, 0.1);
   }
-  to{
-    transform: scale(1,1);
+  to {
+    transform: scale(1, 1);
   }
 }

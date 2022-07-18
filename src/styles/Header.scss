@@ -1,31 +1,31 @@
-@use 'vars';
+@import "vars";
 
-.header{
+.header {
   margin: 0;
   overflow: hidden;
-  background-color: vars.$page-background-color;
+  background-color: $page-background-color;
   border-bottom: 1px solid white;
-  &__list{
+  &__list {
     display: flex;
     margin: 0;
     padding: 0;
-    color:white;
+    color: white;
     align-items: center;
     justify-content: center;
     list-style-type: none;
   }
-  &__list-item{
+  &__list-item {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    height: 40px;
-    &:hover{
+    height: $header-height;
+    &:hover {
       cursor: pointer;
-      background-color: rgba(white,0.25);
+      background-color: rgba(white, 0.25);
       box-shadow: 0 0 white 3px;
     }
-    a{
-      color:inherit;
+    a {
+      color: inherit;
       text-decoration: none;
     }
   }
