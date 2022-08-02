@@ -27,17 +27,34 @@ const Home = () => {
   const navigate = useNavigate();
   const query = useLocation();
 
+  React.useEffect(() => {
+    const queryParams = new URLSearchParams(query.search);
+    const params = Object.fromEntries(queryParams);
+    let aux = {};
+    if (params.search) {
+      aux = { ...aux, search: params.search };
+    }
+    if (params.gender) {
+      aux = { ...aux, gender: params.gender };
+    }
+    if (params.status) {
+      aux = { ...aux, status: params.status };
+    }
+    console.log(aux);
+    setState((state) => ({
+      ...state,
+      ...aux,
+    }));
+  }, []);
+
   React.useEffect(async () => {
     try {
+      console.log("EFFECT QUERY");
       setState((state) => ({
         ...state,
         loading: true,
         error: false,
-        input: "",
-        status: "",
-        gender: "",
       }));
-
       let res = await fetch(
         `https://rickandmortyapi.com/api/character${query.search}`
       );
@@ -60,17 +77,22 @@ const Home = () => {
 
   const handleSearch = () => {
     let searchQuery = "";
+    let filterString = "";
     if (state.input) {
       searchQuery += `name=${state.input}`;
+      filterString = state.status;
     }
     if (state.status) {
       searchQuery += `${searchQuery ? "&" : ""}status=${state.status}`;
+      filterString = state.status;
     }
     if (state.gender) {
       searchQuery += `${searchQuery ? "&" : ""}gender=${state.gender}`;
+      filterString = state.status;
     }
     if (searchQuery) searchQuery = "?" + searchQuery;
     navigate(searchQuery);
+    console.log(filterString);
   };
 
   const handleInput = (event) => {
@@ -105,11 +127,12 @@ const Home = () => {
     }
     return { prevPage: prevPage, nextPage, nextPage };
   };
+  console.log("state: ", state);
   return (
     <div className="home">
       {state.loading && <Loading />}
-      {!state.loading && state.error && <NotFound />}
-      {!state.loading && !state.error && (
+      {/* {!state.loading && state.error && <NotFound />} */}
+      {!state.loading && (
         <>
           <h1 className="home__title">Rick and Morty</h1>
           <Searcher
@@ -124,14 +147,25 @@ const Home = () => {
               handleStatus={handleStatus}
             />
           </Searcher>
-          <CharacterList prevPage={0} nextPage={1} pagination={getPagination()}>
-            {state.characters.results.map((character) => (
-              <CharacterItem
-                key={`character-${character.id}`}
-                character={character}
-              />
-            ))}
-          </CharacterList>
+
+          {state.error ? (
+            <div className="empty-list">
+              <h1>No results found</h1>
+            </div>
+          ) : (
+            <CharacterList
+              prevPage={0}
+              nextPage={1}
+              pagination={getPagination()}
+            >
+              {state.characters.results.map((character) => (
+                <CharacterItem
+                  key={`character-${character.id}`}
+                  character={character}
+                />
+              ))}
+            </CharacterList>
+          )}
         </>
       )}
     </div>

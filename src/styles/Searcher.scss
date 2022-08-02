@@ -1,35 +1,35 @@
-.searcher{
-  display:flex;
+@import "vars";
+.searcher {
+  display: flex;
   justify-content: center;
   margin: 20px 0;
-  &__input{
+  &__input {
     width: 300px;
-    height: 25px;
+    height: 30px;
     border-radius: 5px;
     padding-left: 10px;
-    border: 1px solid #cccccc;
+    border: 1px solid $blue-color;
     outline: none;
-    background-color: transparent;
-    color: white;
-    &:hover{
-      box-shadow: 0 0 3px white;
-      background-color: #666666;
+    background-color: $background-color;
+    color: rgba(255, 255, 255, 0.8);
+    &:hover {
+      box-shadow: 0 0 6px $blue-color;
     }
-    &:focus{
-      box-shadow: 0 0 3px white;
-      background-color: #666666;
+    &:focus {
+      box-shadow: 0 0 6px $blue-color;
     }
-    &::placeholder{
-      color:rgb(209, 209, 209);
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
   }
-  button{
-    background-color: #666666;
-    color:white;
-    border:none;
+  button {
+    background-color: $background-color;
+    color: $blue-color;
+    border: 1px solid $blue-color;
     border-radius: 5px;
-    &:hover{
-      box-shadow: 0 0 3px white;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 6px $blue-color;
     }
   }
 }

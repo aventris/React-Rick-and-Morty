@@ -9,7 +9,6 @@
   border-radius: 20px;
   color: $green-color;
   animation: zoomIn 1s ease;
-  //border: 1px solid $green-color;
   box-shadow: 0 0 10px 2px $green-color;
   &::-webkit-scrollbar {
     width: 5px;
@@ -36,7 +35,12 @@
   }
   &__title {
     text-align: center;
+    color: $green-color;
   }
+  h3 {
+    color: #02afc5;
+  }
+
   &__image {
     margin: 0 auto;
     width: 150px;
@@ -67,7 +71,8 @@
       font-weight: bold;
     }
     & span:last-child {
-      color: #cccccc;
+      color: #ffffff;
+      opacity: 0.6;
     }
   }
 }
