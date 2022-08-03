@@ -1,8 +1,29 @@
 @import "vars";
 
+@font-face {
+  font-family: WubbaLubba;
+  src: url("@fonts/WubbaLubbaDubDub.ttf");
+}
 .home {
   .empty-list {
     color: $green-color;
     text-align: center;
+  }
+}
+
+.home__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "WubbaLubba";
+  img {
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+  }
+  h1 {
+    color: $green-color;
+    text-shadow: 0 0 10px $blue-color;
   }
 }

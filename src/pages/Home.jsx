@@ -10,6 +10,7 @@ import "@styles/Home.scss";
 import { Searcher } from "@components/Searcher";
 import { CharacterList } from "@containers/CharacterList";
 
+import logo from "@icons/Rick-and-Morty.png";
 /* TODO */
 
 /* use loading state to avoid first call */
@@ -40,7 +41,6 @@ const Home = () => {
     if (params.status) {
       aux = { ...aux, status: params.status };
     }
-    console.log(aux);
     setState((state) => ({
       ...state,
       ...aux,
@@ -49,7 +49,6 @@ const Home = () => {
 
   React.useEffect(async () => {
     try {
-      console.log("EFFECT QUERY");
       setState((state) => ({
         ...state,
         loading: true,
@@ -92,7 +91,6 @@ const Home = () => {
     }
     if (searchQuery) searchQuery = "?" + searchQuery;
     navigate(searchQuery);
-    console.log(filterString);
   };
 
   const handleInput = (event) => {
@@ -127,14 +125,16 @@ const Home = () => {
     }
     return { prevPage: prevPage, nextPage, nextPage };
   };
-  console.log("state: ", state);
   return (
     <div className="home">
       {state.loading && <Loading />}
       {/* {!state.loading && state.error && <NotFound />} */}
       {!state.loading && (
         <>
-          <h1 className="home__title">Rick and Morty</h1>
+          <div className="home__title">
+            <img src={logo} alt="" />
+            <h1>G A L E R Y</h1>
+          </div>
           <Searcher
             input={state.input}
             handleInput={handleInput}

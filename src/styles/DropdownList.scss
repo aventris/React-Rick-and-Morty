@@ -1,3 +1,5 @@
+@import "vars";
+
 .dropdown-list {
   overflow-y: auto;
   animation: growDown 1s ease forwards;
@@ -9,6 +11,32 @@
     max-width: 600px;
     grid-template-columns: repeat(auto-fill, 150px);
     margin: 0 auto;
+  }
+}
+
+.dropdown-list__filter {
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 10px auto;
+    padding: 0;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      &.active {
+        border-color: $green-color;
+        color: $green-color;
+      }
+      &:hover {
+        box-shadow: 0 0 4px 1px $green-color;
+        text-shadow: 0 0 4px $green-color;
+      }
+    }
   }
 }
 
